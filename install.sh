@@ -101,7 +101,7 @@ setup_fastfetch() {
 }
 EOF
 	
-  echo -e "fastfetch configuration created at ${BRIGHT_GRAY}${config_file}${RESET}"
+  echo -e "fastfetch config file: ${BRIGHT_GRAY}${config_file}${RESET}"
 
 	if [ $? -eq 0 ]; then
 		logger done "fastfetch configuration updated"
