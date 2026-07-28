@@ -4,7 +4,18 @@
 setup_fastfetch() {
   logger info "setting up fastfetch configuration..."
 
-	local fastfetch_dir="$HOME/.config/fastfetch"
+	local real_user
+	real_user="$(get_real_user)"
+	
+	local real_home
+	real_home="$(getent passwd "$real_user" | cut -d: -f6)"
+
+  if [ -z "$real_home" ]; then
+		logger error "could not resolve home directory for user: $real_user"
+		return 1
+	fi
+
+	local fastfetch_dir="$real_home/.config/fastfetch"
 	local config_file="$fastfetch_dir/config.jsonc"
 	
 	# create directory if it doesn't exist
