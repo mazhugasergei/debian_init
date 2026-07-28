@@ -7,7 +7,13 @@ To have minimal desktop, uncheck "Debian desktop environment" and "GNOME" during
 ## Usage
 
 ```
-su -c "bash <(wget -O- https://raw.githubusercontent.com/mazhugasergei/debian_init/main/install.sh)"
+su -c "bash <(wget -O- https://raw.githubusercontent.com/mazhugasergei/debinit/main/install.sh)"
+```
+
+or:
+
+```
+su -c "bash <(curl https://raw.githubusercontent.com/mazhugasergei/debinit/main/install.sh)"
 ```
 
 For WSL2 I use:
